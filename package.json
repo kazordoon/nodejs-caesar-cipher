@@ -1,0 +1,21 @@
+{
+  "name": "@kazordoon/caesar-cipher",
+  "version": "1.0.0",
+  "description": "Caesar cipher made in Node.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazordoon/nodejs-caesar-cipher.git"
+  },
+  "keywords": [
+    "caesar cipher",
+    "cryptography",
+    "nodejs"
+  ],
+  "author": "Felipe Barros <felipetech@tuta.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kazordoon/nodejs-caesar-cipher/issues"
+  },
+  "homepage": "https://github.com/kazordoon/nodejs-caesar-cipher#readme"
+}
