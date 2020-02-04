@@ -1,6 +1,6 @@
 {
   "name": "@kazordoon/caesar-cipher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Caesar cipher made in Node.js",
   "main": "index.js",
   "repository": {
