@@ -12,6 +12,7 @@
     "cryptography",
     "nodejs"
   ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "author": "Felipe Barros <felipetech@tuta.io>",
   "license": "MIT",
   "bugs": {
