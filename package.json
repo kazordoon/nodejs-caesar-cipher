@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Caesar cipher made in Node.js",
   "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha src/**/*.test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kazordoon/nodejs-caesar-cipher.git"
