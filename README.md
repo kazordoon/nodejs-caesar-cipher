@@ -1,4 +1,6 @@
 # nodejs-caesar-cipher
+[![npm version](https://badge.fury.io/js/%40kazordoon%2Fcaesarcipher.svg)](https://badge.fury.io/js/%40kazordoon%2Fcaesarcipher)
+
 [![kazordoon](https://circleci.com/gh/kazordoon/nodejs-caesar-cipher.svg?style=svg)](https://circleci.com/gh/kazordoon/nodejs-caesar-cipher)
 
 Caesar cipher made with JavaScript
