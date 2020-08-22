@@ -1,40 +1,43 @@
-const { isNumber, isString } = require('./utils/typeof');
+const validateCaesarCipherFields = require('./utils/validateCaesarCipherFields');
+const ValidationException = require('./errors/ValidationException');
 
-module.exports = function(text, leaps = 1) {
-  try {
-    if (!isString(text)) throw Error('The type of the text must be a string.');
-    if (!isNumber(leaps)) throw Error('The type of the leap must be a number');
-    if (leaps > 26) throw Error('The leap must be greater than 0 and less than 26');
+function caesarCipher(text, leaps = 1) {
+  const error = validateCaesarCipherFields(text, leaps);
+  if (error) {
+    return new ValidationException(error.message);
+  }
 
-    text = text.split(' ');
-    let newText = [];
-    
-    text.forEach(word => {
-      let newWord = '';
+  const words = text.split(' ');
+  const shuffledWords = words
+    .map((word) => {
+      const letters = Array.from(word);
 
-      Array.prototype.forEach.call(word, letter => {
-        let code = letter.charCodeAt();
+      const charCodes = letters.map((letter) => {
+        let letterASCIICode = letter.charCodeAt();
+        const lowerACode = 'a'.charCodeAt();
+        const upperACode = 'A'.charCodeAt();
+        const lowerZCode = 'z'.charCodeAt();
+        const upperZCode = 'Z'.charCodeAt();
+
         for (let i = 0; i < leaps; i++) {
-          code++;
-          if (code === 123) {
-            // The ASCII code of 'z' is 122
-            // So if you pass it, the code will be 97, that's the ASCII code of 'a'
-            code = 97;
-          } else if (code === 91) {
-            // The ASCII code of 'Z' is 90
-            // So if you pass it, the code will be 65, that's the ASCII code of 'A'
-            code = 65;
+          letterASCIICode++;
+          const exceededTheLowerZCode = letterASCIICode === lowerZCode + 1;
+          const exceededTheUpperZCode = letterASCIICode === upperZCode + 1;
+
+          if (exceededTheLowerZCode) {
+            letterASCIICode = lowerACode;
+          } else if (exceededTheUpperZCode) {
+            letterASCIICode = upperACode;
           }
         }
-        newWord += String.fromCharCode(code);
+        return letterASCIICode;
       });
-      newText.push(newWord);
-    });
-    
-    newText = newText.join(' ');
-    return newText;
 
-  } catch (err) {
-    return err.message;
-  }
+      const shuffledWord = String.fromCharCode(...charCodes);
+      return shuffledWord;
+    })
+    .join(' ');
+  return shuffledWords;
 }
+
+module.exports = caesarCipher;
