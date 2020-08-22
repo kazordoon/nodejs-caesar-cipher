@@ -1,8 +1,8 @@
 module.exports = {
-  isNumber(element) {
-    return Object.prototype.toString.call(element) === '[object Number]';
+  isNumber(number) {
+    return Object.prototype.toString.call(number) === '[object Number]';
   },
-  isString(element) {
-    return Object.prototype.toString.call(element) === '[object String]';
+  isString(string) {
+    return Object.prototype.toString.call(string) === '[object String]';
   }
 }
