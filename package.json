@@ -4,7 +4,8 @@
   "description": "Caesar cipher made with JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text-summary mocha src/**/*.test.js"
+    "test": "mocha src/**/*.test.js",
+    "coverage": "nyc --reporter=lcov --reporter=text-summary npm t"
   },
   "repository": {
     "type": "git",
