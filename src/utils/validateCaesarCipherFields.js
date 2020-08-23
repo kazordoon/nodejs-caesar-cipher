@@ -12,14 +12,6 @@ function validateCaesarCipherFields(text, leaps) {
     error = new ValidationException('The type of the leap must be a number.');
   }
 
-  const maxLeap = 26;
-  const minLeap = 1;
-  if (leaps > maxLeap || leaps < minLeap) {
-    error = new ValidationException(
-      'The leap must be greater than 0 and less than 26.',
-    );
-  }
-
   return error;
 }
 

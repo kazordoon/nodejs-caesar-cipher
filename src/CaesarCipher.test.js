@@ -41,15 +41,5 @@ describe('Caesar Cipher', () => {
       assert.deepStrictEqual(actual instanceof ValidationException, true);
       assert.deepStrictEqual(expected, actual);
     });
-
-    it('should return an exception telling that the leap exceeded the number 26', () => {
-      const expected = new ValidationException(
-        'The leap must be greater than 0 and less than 26.'
-      );
-      const actual = CaesarCipher.shuffle('Hello World', 27);
-
-      assert.deepStrictEqual(actual instanceof ValidationException, true);
-      assert.deepStrictEqual(expected, actual);
-    });
   });
 });
