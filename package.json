@@ -2,7 +2,7 @@
   "name": "@kazordoon/caesarcipher",
   "version": "1.0.1",
   "description": "Caesar cipher made with JavaScript",
-  "main": "index.js",
+  "main": "./src/CaesarCipher.js",
   "scripts": {
     "test": "mocha src/**/*.test.js",
     "coverage": "nyc --reporter=lcov --reporter=text-summary npm t"
