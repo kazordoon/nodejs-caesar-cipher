@@ -2,11 +2,15 @@ const validateCaesarCipherFields = require('./utils/validateCaesarCipherFields')
 const ValidationException = require('./errors/ValidationException');
 
 class CaesarCipher {
+  /**
+   *
+   * @param {string} text
+   * @param {number} leaps
+   * @returns {string | ValidationException}
+   */
   static shuffle(text, leaps = 1) {
     const error = validateCaesarCipherFields(text, leaps);
-    if (error) {
-      return new ValidationException(error.message);
-    }
+    if (error) return new ValidationException(error.message);
 
     const words = text.split(' ');
     const shuffledWords = words

@@ -1,6 +1,12 @@
 const { isNumber, isString } = require('./typeof');
 const ValidationException = require('../errors/ValidationException');
 
+/**
+ *
+ * @param {string} text
+ * @param {number} leaps
+ * @returns {null | ValidationException}
+ */
 function validateCaesarCipherFields(text, leaps) {
   let error = null;
 
